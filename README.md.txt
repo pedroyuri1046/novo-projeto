@@ -1,0 +1,1 @@
+ Esta calculadora de pace para corredores é meu primeiro projeto de site. Utilizei as ferramentas, HTML5, CSS3, JavaScript. E com isso, tive um foco maior na manipulação de DOM e Flexbox.

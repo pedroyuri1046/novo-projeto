@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Pace</title>
+    <link href="style.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div class="container">
+    <div class="button-wrapper">
+        <button class="box-item" onclick="configurarCalculadora('tempo')"> <p class="Teko">TEMPO</p> </button>
+        <button class="box-item" onclick="configurarCalculadora('pace')"> <p class="Teko">PACE</p> </button>
+        <button class="box-item" onclick="configurarCalculadora('distancia')"> <p class="Teko">DISTÂNCIA</p> </button>
+    </div>
+
+    <div class="conteudo-calculadora">
+
+        <div id="painel-entrada" class="painel-escondido">
+            <h2 id="titulo-painel" class="Teko"></h2>
+            <div id="container-inputs"></div>
+            <button class="box-item" onclick="calcular()"> <p class="Teko">CALCULAR</p> </button>
+        </div>
+
+      <div id="painel-resultado" class="painel-escondido">
+            <h2 class="Teko">RESULTADO:</h2>
+            <div id="valor-resultado" class="Teko" style="font-size: 60px; color: #e4e4e4;">
+                --:--
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+ body {
+    /* Remove a margem padrão ao redor da página */
+    margin: 0;
+    /* Adiciona um preenchimento de 20 pixels ao redor do conteúdo */
+    padding: 20px;
+    /* Define a cor de fundo da página para um cinza claro */
+    background-color: #231843;
+    /* Usa o modelo de layout flexível para organizar o conteúdo */
+    display: flex;
+    /* Centraliza horizontalmente o conteúdo */
+    justify-content: center;
+    /* Centraliza verticalmente o conteúdo */
+    align-items: center;
+    /* Garante que a altura mínima da página seja 100% da altura da janela */
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #190538;
+    
+    /* --- O SEGREDO ESTÁ AQUI --- */
+    display: flex;          /* Ativa o modo flexível */
+    flex-direction: row;    /* Coloca os itens em linha (um ao lado do outro) */
+    flex-direction: column;
+    gap: 20px;             /* Cria um espaço entre os elementos */
+    justify-content: center; /* Centraliza os itens dentro do container */
+    align-items: flex-start;    /* Alinha os itens verticalmente */
+    /* --------------------------- */
+    gap: 20px;
+    padding: 40px 40px;          /* Reduzi de 200px para 50px para caber melhor na tela */
+    border-radius: 12px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 300);
+    min-height: auto; 
+    margin-bottom: 20px; /* Espaço entre os botões e o painel que vai abrir */
+}
+
+.Teko {
+        font-family: 'Teko', sans-serif;
+        font-size: 32px;
+        color: #fff20f; /* Azul do Corre 4 */
+        margin: 0;
+    }
+
+/* Unificando tudo em uma única classe .box-item */
+.box-item {
+    /* 1. Layout e Posicionamento */
+    flex: 1;                 /* Divide o espaço igualmente entre os botões */
+    min-width: 160px;        /* Largura mínima para caber a palavra "DISTÂNCIA" */
+    max-width: none;         /* Permite que o botão cresça conforme o necessário */
+    overflow: hidden;        /* Garante que nada saia dos limites da caixa */
+    
+    /* 2. Espaçamento e Bordas */
+    padding: 15px 10px;      /* Espaço interno (Vertical | Horizontal) */
+    border-radius: 12px;     /* Arredondamento dos cantos */
+    border: 3px solid transparent; /* Reserva o espaço para a borda do clique */
+    
+    /* 3. Estilo Visual */
+    background-color: #231843;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 400); /* Opcional: pronto para receber sombra */
+    
+    /* 4. Tipografia e Alinhamento de Texto */
+    text-align: center;      /* Centraliza o parágrafo horizontalmente */
+    white-space: nowrap;     /* Impede que o texto quebre em duas linhas */
+    
+    /* 5. Interação e Animação */
+    cursor: pointer;         /* Muda o ícone do mouse ao passar por cima */
+    outline: none;           /* Remove o contorno padrão do navegador */
+    transition: all 0.2s ease-in-out; /* Suaviza as mudanças de cor e borda */
+}
+
+.box-item:focus {
+    border-color: #fff20f; /* Muda a cor da borda para o amarelo Teko ao clicar */
+    background-color: #5d4a91; /* Opcional: clareia levemente o fundo para dar mais feedback */
+    box-shadow: 0 0 15px rgba(255, 242, 15, 0.5); /* Opcional: adiciona um brilho amarelo */
+}
+
+/* Esconde o painel inicialmente */
+.painel-escondido {
+    display: none; 
+    background-color: #190538;
+    padding: 20px;
+    border-radius: 12px;
+    flex: none; /* Faz ambos terem o mesmo tamanho proporcional */
+    width: 320px; /* Limita a largura para não ficar gigante */
+
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar */
+.painel-visivel {
+    display: flex !important;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease-in;
+}
+
+#container-inputs {
+    
+    width: 100%;
+}
+
+/* Animação suave para aparecer */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-pace {
+    background: #231843;    
+    border: none;
+    color: white;
+    padding: 10px;
+    font-family: 'Teko', sans-serif;
+    font-size: 24px;
+    width: 100%; /* Ocupa a largura da box */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+    margin-bottom: 20px; 
+    border-radius: 12px;
+    
+}
+.button-wrapper {
+    display: flex;
+    flex-direction: row; /* Coloca os botões lado a lado */
+    gap: 60px; /* AUMENTE OU DIMINUA ESTE VALOR para ajustar a distância */
+    width: 100%;
+    justify-content: center; /* Mantém os botões centralizados no container */
+}
+SS
+#painel-resultado {
+    display: none;      /* Continua escondido inicialmente */
+    width: 100%;        /* Ajuste para ocupar a largura do container pai */
+    max-width: 400px;   /* Define um limite para não ficar largo demais */
+    margin-top: 20px;
+    padding-top: 10px; /* Ajuste este valor para alinhar com o título da esquerda */
+    text-align: center;
+}
+.conteudo-calculadora {
+    display: flex;
+    flex-direction: row; /* Alinha horizontalmente */
+    justify-content: center;
+    align-items: center; /* Alinha pelo topo */
+    gap: 100px; /* Espaço entre a caixa de input e a de resultado */
+    width: 100%;
+}
+#valor-resultado {
+    text-shadow: 0 0 15px rgba(255, 242, 15, 0.4); /* Um brilho suave amarelo */
+    letter-spacing: 2px; /* Espaça um pouco mais os números */
+}
+#titulo-painel {
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow: block;
+
+}
